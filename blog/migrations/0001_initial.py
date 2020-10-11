@@ -14,8 +14,8 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='Blog',
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('tital', models.CharField(max_length=255)),
+                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('pub_date', models.DateTimeField()),
                 ('image', models.ImageField(upload_to='images/')),
                 ('body', models.TextField()),

@@ -13,14 +13,9 @@
 
 	<style>
       hr {
-        width: 50%;
         height: 0.5px;
         background-color: gray;
       }
-
-/*      .fa-twitter, .fa-twitter-square {
- 	    color: #00aced
-      }*/
 
      .fa.fa-instagram {
   		color: transparent;
@@ -29,6 +24,7 @@
   		background-clip: text;
   		-webkit-background-clip: text;
 	  }
+
 	       .fa.fa-twitter {
   		color: transparent;
   		background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
@@ -43,10 +39,6 @@
   		background: -webkit-radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
   		background-clip: text;
   		-webkit-background-clip: text;
-	  }
-
-		  legend.green-color a:hover{
-    	text-decoration: none;
 	  }
 
 
@@ -68,7 +60,7 @@
 					<li style='margin-right: 270px' class="nav-item">
 					</li>
 				   <li class="nav-item">
-						 <a style="text-decoration: none; margin-right: 40px;margin-left: 10px ;font-size: 32px;" href="https://twitter.com/JAZZZARAS" class="fa fa-twitter"></a>
+						 <a style=" margin-right: 40px;margin-left: 10px ;font-size: 32px;" href="https://twitter.com/JAZZZARAS" class="fa fa-twitter"></a>
 
 					</li>
 
@@ -95,49 +87,35 @@
 						<a class="nav-link" href="{% url 'resume' %}">Resume</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="{% url 'allblogs' %}">Blog</a>
+						<a class="nav-link active" href="{% url 'allblogs' %}">Blog</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="{% url 'home' %}">Home</a>
+						<a class="nav-link" href="{% url 'home' %}">Home</a>
 					</li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
+
 	<main role="main">
-
-		<section class="jumbotron text-center">
-			<div class="container">
-				<h1>Hi... i am Jazzar</h1>
-				<p class="lead text-muted">i am a coder and i do not like people</p>
-				<p>
-					<a href="mailto:jazzaras@yahoo.com" class="btn btn-primary my-2 border border-dark">Email Me</a>
-				</p>
-				<a href="{% url 'aboutme' %}"><img class="img-fluid rounded border border-dark" height=200 width=200 src="{% static 'المز زوزو.jpg' %}"></a>
-			</div>
-		</section>
-
-		<div class="album py-5 bg-light">
-			<div class="container">
-
-				<div class="row">
-					
-					{% for job in jobs.all %}
-					<div class="col-md-4">
-						<div class="card mb-4 shadow-sm">
-							<img class="card-img-top" src="{{ job.image.url }}">
-							<div class="card-body">
-								<p class="card-text">{{job.summary}}</p>
-							</div>
-						</div>
-					</div>
-					{% endfor %}
-
-				</div>
-			</div>
+		<div class="container">
+		<h1 class="text-center pt-5">Welcome To Jazzar's Blog<h1>
+		<br />
+		<br />
+		<h2>Latest Posts</h2>
+		<hr />
+		{% for blog in blogs.all %}
+		<a style="color: black; text-decoration: none;" href="{% url 'detail' blog.id%}">
+			<h3>{{ blog.title }}</h3>
+		{{ blog.pup_date_p }}
+		<br />
+		<img class="img-fluid" src="{{blog.image.url}}" height=300 width=300>
+		<p>{{ blog.summery }}</p>
+		<a />
+		{% endfor %}
 		</div>
-
+		
 	</main>
 
 	<footer class="text-muted">
