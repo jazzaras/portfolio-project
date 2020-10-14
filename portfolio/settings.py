@@ -31,7 +31,18 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+THIRD_PARTY_APPS = [
+
+]
+
+LOCAL_APPS = [
+
+]
+
+INTALLED_APPS =  LOCAL_APPS + THIRD_PARTY_APPS
+
+
+DEFAULT_APPS = [
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
@@ -81,7 +92,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'portfoliodb',
         'USER': 'postgres',
-        'PASSWORD': 'django123',
+        'PASSWORD': 'hebaHEBA12',
         'HOST':'localhost',
         'PORT':'5432',
 
