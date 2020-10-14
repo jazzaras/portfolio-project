@@ -31,18 +31,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-THIRD_PARTY_APPS = [
-
-]
-
-LOCAL_APPS = [
-
-]
-
-INTALLED_APPS =  LOCAL_APPS + THIRD_PARTY_APPS
-
-
-DEFAULT_APPS = [
+INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'jobs.apps.JobsConfig',
     'django.contrib.admin',
