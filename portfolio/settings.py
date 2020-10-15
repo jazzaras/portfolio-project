@@ -82,7 +82,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'PASSWORD': 'hebaHEBA12',
-        'HOST':'abdalaziz.pythonanywhere.com',
+        'HOST':'localhost',
         'PORT':'5432',
 
     }
