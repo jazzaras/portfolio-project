@@ -83,7 +83,7 @@ DATABASES = {
         'USER': 'postgres',
         'PASSWORD': 'hebaHEBA12',
         'HOST':'localhost',
-        'PORT':'5432',
+        'PORT':'',
 
     }
 }
@@ -137,9 +137,9 @@ STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
-try:
-    from local_sittings import *
-except ImportError:
-    pass
+# try:
+#     from local_sittings import *
+# except ImportError:
+#     pass
 
-#fok
+# #fok
